@@ -13,4 +13,5 @@ function saveTime(data) {
     };
 
 const saveKey = localStorage.getItem(LOCALSTORAGE_KEY);
+const stogageTime = saveKey > null ? saveKey : 0;
 player.setCurrentTime(saveKey);
