@@ -23,8 +23,8 @@ function getSaveInput(event){
   const saveMessageJson = JSON.parse(saveMessage);
   
   if(saveMessageJson){
-    refs.inputEl.value = saveMessageJson.email;
-    refs.textareaEl.value = saveMessageJson.message;
+    refs.inputEl.value = saveMessageJson.email || '';
+    refs.textareaEl.value = saveMessageJson.message || '';
   };
 };
 
