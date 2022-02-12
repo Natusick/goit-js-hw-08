@@ -22,7 +22,7 @@ function onFormSubmit(event) {
   }
   localStorage.removeItem(STORAGE_KEY);
   refs.formEl.reset();
-  formData = {};
+  
 }
 refs.formEl.addEventListener('submit', onFormSubmit);
 console.log({email: refs.inputEl.value, message: refs.textareaEl.value});
