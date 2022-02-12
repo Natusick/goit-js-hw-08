@@ -11,9 +11,10 @@ const currentInput = function (e) {
   const formJSON = JSON.stringify(formData);
   localStorage.setItem(STORAGE_KEY, formJSON);
 };
-refs.formEl.addEventListener('submit', onFormSubmit);
+
 refs.formEl.addEventListener('input', throttle(currentInput, 500));
 getSaveInput();
+
 function onFormSubmit(event) {
   event.preventDefault();
   if (refs.inputEl.value === '' || refs.textareaEl.value === '') {
@@ -23,6 +24,9 @@ function onFormSubmit(event) {
   refs.formEl.reset();
   formData = {};
 }
+refs.formEl.addEventListener('submit', onFormSubmit);
+console.log({email: refs.inputEl.value, message: refs.textareaEl.value});
+
 function getSaveInput() {
   let saveMessage = localStorage.getItem(STORAGE_KEY);
   if (saveMessage) {
